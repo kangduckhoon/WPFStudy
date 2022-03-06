@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "WPFStudy": {
+      "commandName": "Project",
+      "nativeDebugging": false
+    }
+  }
+}
