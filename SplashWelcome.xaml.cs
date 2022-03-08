@@ -15,19 +15,13 @@ using System.Windows.Shapes;
 namespace WPFStudy
 {
     /// <summary>
-    /// Interaction logic for SignIn.xaml
+    /// Interaction logic for SplashWelcome.xaml
     /// </summary>
-    public partial class SignIn : Window
+    public partial class SplashWelcome : Window
     {
-        public SignIn()
+        public SplashWelcome()
         {
             InitializeComponent();
-        }
-
-        private void buttonCancel_Click(object sender, RoutedEventArgs e)
-        {
-            //do something before close
-            this.Close();
         }
     }
 }

@@ -5,9 +5,82 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFStudy"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
-    <Grid>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Height="64" Margin="353,164,0,0" VerticalAlignment="Top" Width="97" Click="button_Click"/>
+        Title="MainWindow" Width="800" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+    <Grid Height="533">
+        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Height="64" Margin="639,39,0,0" VerticalAlignment="Top" Width="97" Click="button_Click" MouseEnter="button_MouseEnter" MouseLeave="button_MouseLeave"/>
+        <Label Content="Personal Information" HorizontalAlignment="Left" Margin="40,27,0,0" VerticalAlignment="Top"/>
+        <Label Content="Email" HorizontalAlignment="Left" Margin="40,58,0,0" VerticalAlignment="Top"/>
+        <TextBox
+            Height ="26" HorizontalAlignment="Left"
+            Margin="138,63,0,0" Name="Email"
+            VerticalAlignment="Top" Width="222"
+            Text="Initial Text contents of the TextBox.">
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="1, 0.5" StartPoint="0, 0.5">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#10ECD9D9" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="40,104,0,0" VerticalAlignment="Top"/>
+        <PasswordBox HorizontalAlignment="Left" Margin="138,105,0,0" VerticalAlignment="Top" Width="222" Height="26"/>
+        <Label Content="Description" HorizontalAlignment="Left" Margin="40,161,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.481,0.593"/>
+        <RichTextBox Margin="138,166,145,267">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="Here is RichTextBox control"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <Label Content="Description" HorizontalAlignment="Left" Margin="40,294,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.481,0.593"/>
+        <CheckBox Content="M.B.A" x:Name="checkBox1" HorizontalAlignment="Left" Margin="138,299,0,0" VerticalAlignment="Top" Tag="0"/>
+        <CheckBox Content="B.A" x:Name="checkBox2" HorizontalAlignment="Left" Margin="230,299,0,0" VerticalAlignment="Top" Tag="1"/>
+        <CheckBox x:Name="checkBox3" HorizontalAlignment="Left" Margin="310,299,0,0" VerticalAlignment="Top">
+            <CheckBox.Content>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="M.B.S"/>
+                </StackPanel>
+            </CheckBox.Content>
+        </CheckBox>
+        <Label Content="Gender" HorizontalAlignment="Left" Margin="40,325,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.481,0.593"/>
+        <Label Content="Marital STatus" HorizontalAlignment="Left" Margin="40,356,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.481,0.593"/>
+        <RadioButton Content="Male" HorizontalAlignment="Left" Margin="138,331,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.496,0.501" GroupName="Gender" IsChecked="True"/>
+        <RadioButton Content="Female" HorizontalAlignment="Left" Margin="230,331,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.496,0.501" GroupName="Gender"/>
+        <RadioButton Content="Single" HorizontalAlignment="Left" Margin="138,362,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.496,0.501" GroupName="MaritalStatus"/>
+        <RadioButton Content="Married" HorizontalAlignment="Left" Margin="230,362,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.496,0.501" GroupName="MaritalStatus" IsChecked="True"/>
+        <Label Content="Marital Status" HorizontalAlignment="Left" Margin="40,387,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.481,0.593"/>
+        <ComboBox Name="comboBox1" HorizontalAlignment="Left" Margin="141,389,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="Accounting" IsSelected="False"/>
+            <ComboBoxItem Content="Computer Science" Background="Blue" Foreground="Red"/>
+            <ComboBoxItem Content="Marketing" IsSelected="True"/>
+            <ComboBoxItem>
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox/>
+                    <TextBlock Text="Human Resource"/>
+                </StackPanel>
+            </ComboBoxItem>
+            <ComboBox x:Name="comboBox1_Copy" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120">
+                <ComboBoxItem Content="Accounting" IsSelected="False"/>
+                <ComboBoxItem Content="Computer Science" Background="Blue" Foreground="Red"/>
+                <ComboBoxItem Content="Marketing" IsSelected="True"/>
+                <ComboBoxItem>
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox/>
+                        <TextBlock Text="Human Resource"/>
+                    </StackPanel>
+                </ComboBoxItem>
+            </ComboBox>
+        </ComboBox>
+        <Label Content="City" HorizontalAlignment="Left" Margin="40,422,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.481,0.593"/>
+        <ComboBox Name="comboBox2" HorizontalAlignment="Left" Margin="141,422,0,0" VerticalAlignment="Top" Width="120">
+        </ComboBox>
+        <Label Content="Join Date" HorizontalAlignment="Left" Margin="40,453,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.481,0.593"/>
+        <DatePicker HorizontalAlignment="Left" Margin="141,455,0,0" VerticalAlignment="Top" Width="120"/>
 
+        <Popup Name="myPopup" PlacementTarget="{Binding ElementName=comboBox2}">
+            <TextBlock Name="myPopupText" Background="LightBlue" Foreground="Blue">
+                Popups can be of any shape but are always contained within a rectangular bounding box.
+            </TextBlock>
+        </Popup>
     </Grid>
 </Window>

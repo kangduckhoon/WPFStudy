@@ -33,6 +33,15 @@ namespace WPFStudy
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            //Item item = new Item();
+            //item.Id = "A001";
+            //item.Name = "New York";
+            //comboBox2.Items.Add(item);
+            //item = new Item();
+            //item.Id = "A002";
+            //item.Name = "Los Angeles";
+            //comboBox2.Items.Add(item);
+
             SignIn window = new SignIn();
             _ = window.ShowDialog();
         }
@@ -43,6 +52,16 @@ namespace WPFStudy
             {
                 e.Cancel = true;
             }
+        }
+
+        private void button_MouseEnter(object sender, MouseEventArgs e)
+        {
+            myPopup.IsOpen = true;
+        }
+
+        private void button_MouseLeave(object sender, MouseEventArgs e)
+        {
+            myPopup.IsOpen = false;
         }
     }
 }
